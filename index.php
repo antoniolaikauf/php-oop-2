@@ -82,7 +82,7 @@
                     </div>
                     <div> articolo per: <?php echo $card->gettipocategoria()->gettipoanimale() ?></div>
                     <div> <?php echo $card->getnome() ?></div>
-                    <img style="width: 50%;" src="<?php echo $card->getimmagine(); ?>" alt="Descrizione dell'immagine">
+                    <img style="width: 50%;" src="<?php echo $card->getimmagine(); ?>" alt="immagine prodotto">
                     <div> prezzo articolo: <?php echo $card->getprezzo() ?></div>
                 </div>
             <?php
