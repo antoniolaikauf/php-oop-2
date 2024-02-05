@@ -64,7 +64,7 @@
     {
 
         private $tipoprodotto;
-        // aggiunto classe 
+        // aggiunto classe per tipo animale
         private $tipocategoria;
 
         public function __construct(
@@ -90,7 +90,7 @@
 
             $this->tipoprodotto = $tipoprodotto;
         }
-        public function gettipoCategoria()
+        public function gettipocategoria()
         {
 
             return $this->tipocategoria;
@@ -121,13 +121,39 @@
         }
     }
 
-
-    $categoria = new categoria('gatto');
-    $prodotti = new prodotti('pupazzo', 'immagine', '50 $', 'casagiocattolo', $categoria);
+    // due tipi di categoria di animale 
+    $categoriagatto = new categoria('gatto');
+    $categoriacane = new categoria('cane');
+    // array con dentro i rodotti 
+    $prodotti = [
+        new prodotti('giocattolo', 'immagine', '50 $', 'palla', $categoriacane),
+        new prodotti('cibo', 'immagine', '20 $', 'croccantini', $categoriacane),
+        new prodotti('cuccia', 'immagine', '20 $', 'cucciamorbida', $categoriagatto),
+    ];
     // $prodotto = new prodottosingolo('immagine', '50 $', 'casagiocattolo');
     // var_dump($categoria);
     // var_dump($prodotti);
+
     ?>
+
+    <div class="container">
+        <div class="row">
+            <!-- ciclo su array di prodotti -->
+            <?php foreach ($prodotti as $card) {
+
+            ?>
+                <div class="col-6">
+                    <h1> <?php echo $card->gettipoprodotto() ?></h1>
+                    <div> <?php echo $card->gettipocategoria()->gettipoanimale() ?></div>
+                    <div> <?php echo $card->getimmagine() ?></div>
+                    <div> <?php echo $card->getprezzo() ?></div>
+                    <div> <?php echo $card->getnome() ?></div>
+                </div>
+            <?php
+            }
+            ?>
+        </div>
+    </div>
 
 </body>
 
