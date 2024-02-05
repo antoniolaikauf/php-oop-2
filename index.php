@@ -130,7 +130,6 @@
         new prodotti('cibo', 'immaginiprodotto/cibocane.jpg', '20 $', 'croccantini', $categoriacane),
         new prodotti('cuccia', 'immaginiprodotto/immaginicucciagatto.jpg', '20 $', 'cuccia per gatti', $categoriagatto),
     ];
-    // $prodotto = new prodottosingolo('immagine', '50 $', 'casagiocattolo');
     // var_dump($categoria);
     // var_dump($prodotti);
 
@@ -138,7 +137,6 @@
 
     <div class="container">
         <div class="row">
-            <!-- <img src="immagi/palla.jpg" alt=""> -->
             <!-- ciclo su array di prodotti -->
             <?php foreach ($prodotti as $card) {
 
