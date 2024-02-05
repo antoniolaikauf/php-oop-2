@@ -14,7 +14,7 @@
     require_once('classegioco.php');
     require_once('classecibo.php');
     require_once('classecuccia.php');
-    require_once('iscrizione.php');
+
     $jsonAccount = file_get_contents("account.json");
     $account = json_decode($jsonAccount, true);
     ?>
@@ -37,10 +37,10 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <form>
-                    <input type="text" name="name">
-                    <input type="text" name="cognome">
-                    <input type="submit" value="iscriviti" class="creazione-account">
+                <form class="creazione-account">
+                    <input type="text" name="name" class="nomeaccount">
+                    <input type="text" name="cognome" class="cognomeaccount">
+                    <input type="submit" value="iscriviti">
                 </form>
             </div>
             <!-- ciclo su array di prodotti -->
@@ -79,6 +79,7 @@
                     <!-- proprietà appartenente a prodottosingolo -->
                     <img style="width: 50%;" src="<?php echo $card->getImmagine(); ?>" alt="immagine prodotto">
                     <!-- proprietà appartenente a prodottosingolo -->
+
                     <?php
                     if ($account[0]['registrato']) {
                     ?>
@@ -86,14 +87,31 @@
                     <?php
                     }
                     ?>
-
                 </div>
             <?php
             }
             ?>
         </div>
     </div>
-    <!-- bisognerebbe sistemare lo sconto perchè adesso lo fa sempre  -->
+    <!-- <script>
+        let account = document.querySelector('.creazione-account');
+        account.addEventListener('click', function() {})
+        let nomeAccount = document.querySelector('.nomeaccount').value
+        let cognomeAccount = document.querySelector('.cognomeaccount').value
+        let params = {
+
+            nome: nomeAccount,
+            cognome: cognomeAccount,
+
+        };
+        axios.get('http://localhost/php-oop-2/iscrizione.php', params)
+            .then((risposta) => {
+                console.log(risposta.data);
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    </script> -->
 </body>
 
 </html>
