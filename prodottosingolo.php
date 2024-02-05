@@ -1,5 +1,4 @@
 <?php
-
 // caratteristiche prodotto singolo
 class prodottoSingolo
 {
@@ -8,12 +7,13 @@ class prodottoSingolo
     private $prezzo;
     private $nome;
     private $tipoProdotto;
+
     // prese delle proprietà
     public function __construct(
         $immagine,
         $prezzo,
         $nome,
-        $tipoProdotto
+        $tipoProdotto,
     ) {
         $this->seTimmagine($immagine);
         $this->setPrezzo($prezzo);
@@ -38,7 +38,6 @@ class prodottoSingolo
     }
     public function setPrezzo($prezzo)
     {
-
         $this->prezzo = $prezzo;
     }
     public function getNome()

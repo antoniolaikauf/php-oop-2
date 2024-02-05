@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- link axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.7/axios.min.js" integrity="sha512-NQfB/bDaB8kaSXF8E77JjhHG5PM6XVRxvHzkZiwl3ddWCEPBa23T76MuWSwAJdMGJnmQqM0VeY9kFszsrBEFrQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- link bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <?php
@@ -12,12 +14,17 @@
     require_once('classegioco.php');
     require_once('classecibo.php');
     require_once('classecuccia.php');
+    require_once('iscrizione.php');
+    $jsonAccount = file_get_contents("account.json");
+    $account = json_decode($jsonAccount, true);
     ?>
     <title>card prodotti</title>
 </head>
 
 <body>
     <?php
+    // var_dump($nome);
+
     // array con dentro i rodotti 
     $prodotti = [
         new gioco('non nocivo per animali', 'immaginiprodotto/palla.jpg', '50 $', 'palla', 'gioco', $categoriacane),
@@ -29,6 +36,13 @@
 
     <div class="container">
         <div class="row">
+            <div class="col-12">
+                <form>
+                    <input type="text" name="name">
+                    <input type="text" name="cognome">
+                    <input type="submit" value="iscriviti" class="creazione-account">
+                </form>
+            </div>
             <!-- ciclo su array di prodotti -->
             <?php foreach ($prodotti as $card) {
 
@@ -65,14 +79,21 @@
                     <!-- proprietà appartenente a prodottosingolo -->
                     <img style="width: 50%;" src="<?php echo $card->getImmagine(); ?>" alt="immagine prodotto">
                     <!-- proprietà appartenente a prodottosingolo -->
-                    <div> prezzo articolo: <?php echo $card->getPrezzo() ?></div>
+                    <?php
+                    if ($account[0]['registrato']) {
+                    ?>
+                        <div> prezzo articolo: <?php echo $card->getPrezzo() -  $card->getPrezzo() / 100 * 20 ?></div>
+                    <?php
+                    }
+                    ?>
+
                 </div>
             <?php
             }
             ?>
         </div>
     </div>
-
+    <!-- bisognerebbe sistemare lo sconto perchè adesso lo fa sempre  -->
 </body>
 
 </html>
