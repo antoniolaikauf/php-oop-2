@@ -3,9 +3,9 @@ require_once('prodottosingolo.php');
 // classe per gioco
 class gioco extends prodottoSingolo
 {
-
+    // proprietà specifica per classe gioco
     private $nocivoPerAnimali;
-    // aggiunto classe per tipo animale
+    // aggiunto classe per tipo animale file categoria.php
     private $tipoCategoria;
 
     public function __construct(
@@ -17,12 +17,14 @@ class gioco extends prodottoSingolo
         categoria $tipoCategoria
     ) {
         $this->setnocivoPerAnimali($nocivoPerAnimali);
+        $this->settipoCategoria($tipoCategoria);
+        // proprietà in classe prodottosingolo
         $this->setimmagine($immagine);
         $this->setprezzo($prezzo);
         $this->setnome($nome);
         $this->setTipoProdotto($tipoProdotto);
-        $this->settipoCategoria($tipoCategoria);
     }
+     // function per manipolare le proprietà/utilizzarle
     public function getNocivoPerAnimali()
     {
 

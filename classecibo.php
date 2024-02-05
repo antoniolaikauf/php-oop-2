@@ -5,9 +5,9 @@ require_once('prodottosingolo.php');
 // classe per cibo
 class cibo extends prodottoSingolo
 {
-
+    // proprietà specifica per classe cibo
     private $tipoCibo;
-    // aggiunto classe per tipo animale
+    // aggiunto classe per tipo animale file categoria.php
     private $tipoCategoria;
 
     public function __construct(
@@ -19,12 +19,14 @@ class cibo extends prodottoSingolo
         categoria $tipoCategoria
     ) {
         $this->setTipoCibo($tipoCibo);
+        $this->setTipoCategoria($tipoCategoria);
+        // proprietà di classe prodotto singolo
         $this->setImmagine($immagine);
         $this->setPrezzo($prezzo);
         $this->setNome($nome);
         $this->setTipoProdotto($tipoProdotto);
-        $this->setTipoCategoria($tipoCategoria);
     }
+    // function per manipolare le proprietà/utilizzarle
     public function getTipoCibo()
     {
 
@@ -35,6 +37,7 @@ class cibo extends prodottoSingolo
 
         $this->tipoCibo = $tipoCibo;
     }
+
     public function getTipoCategoria()
     {
 

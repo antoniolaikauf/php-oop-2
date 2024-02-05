@@ -36,7 +36,7 @@
                 <div class="col-6 text-center border">
                     <div class="d-flex justify-content-center align-items-center">
                         <span>tipo articolo:</span>
-                        <!-- controlli se esistono le proprietà nella classe -->
+                        <!-- controlli se esistono le proprietà nella classecibo,classegioco,classecuccia -->
                         <?php
                         if (property_exists($card, 'nocivoPerAnimali')) {
                         ?>
@@ -56,10 +56,15 @@
                         <?php }
                         ?>
                     </div>
+                    <!-- proprieta appartenente a proprietàsingolo -->
                     <div> <?php echo $card->getTipoProdotto() ?></div>
+                    <!-- proprietà appartenente a categorie -->
                     <div> articolo per: <?php echo $card->getTipoCategoria()->getTipoAnimale() ?></div>
+                    <!-- proprietà appartenente a prodottosingolo -->
                     <div> <?php echo $card->getNome() ?></div>
+                    <!-- proprietà appartenente a prodottosingolo -->
                     <img style="width: 50%;" src="<?php echo $card->getImmagine(); ?>" alt="immagine prodotto">
+                    <!-- proprietà appartenente a prodottosingolo -->
                     <div> prezzo articolo: <?php echo $card->getPrezzo() ?></div>
                 </div>
             <?php
