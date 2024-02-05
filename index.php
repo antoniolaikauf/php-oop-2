@@ -126,9 +126,9 @@
     $categoriacane = new categoria('cane');
     // array con dentro i rodotti 
     $prodotti = [
-        new prodotti('giocattolo', 'immagine', '50 $', 'palla', $categoriacane),
-        new prodotti('cibo', 'immagine', '20 $', 'croccantini', $categoriacane),
-        new prodotti('cuccia', 'immagine', '20 $', 'cucciamorbida', $categoriagatto),
+        new prodotti('giocattolo', 'immaginiprodotto/palla.jpg', '50 $', 'palla', $categoriacane),
+        new prodotti('cibo', 'immaginiprodotto/cibocane.jpg', '20 $', 'croccantini', $categoriacane),
+        new prodotti('cuccia', 'immaginiprodotto/immaginicucciagatto.jpg', '20 $', 'cuccia per gatti', $categoriagatto),
     ];
     // $prodotto = new prodottosingolo('immagine', '50 $', 'casagiocattolo');
     // var_dump($categoria);
@@ -138,16 +138,20 @@
 
     <div class="container">
         <div class="row">
+            <!-- <img src="immagi/palla.jpg" alt=""> -->
             <!-- ciclo su array di prodotti -->
             <?php foreach ($prodotti as $card) {
 
             ?>
-                <div class="col-6">
-                    <h1> <?php echo $card->gettipoprodotto() ?></h1>
-                    <div> <?php echo $card->gettipocategoria()->gettipoanimale() ?></div>
-                    <div> <?php echo $card->getimmagine() ?></div>
-                    <div> <?php echo $card->getprezzo() ?></div>
+                <div class="col-6 text-center border">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <span>tipo articolo:</span>
+                        <h1><?php echo $card->gettipoprodotto() ?></h1>
+                    </div>
+                    <div> articolo per: <?php echo $card->gettipocategoria()->gettipoanimale() ?></div>
                     <div> <?php echo $card->getnome() ?></div>
+                    <img style="width: 50%;" src="<?php echo $card->getimmagine(); ?>" alt="Descrizione dell'immagine">
+                    <div> prezzo articolo: <?php echo $card->getprezzo() ?></div>
                 </div>
             <?php
             }
