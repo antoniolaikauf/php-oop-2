@@ -1,5 +1,5 @@
 <?php
-// classe con dentro dei tipi di prodotti
+
 // caratteristiche prodotto singolo
 class prodottosingolo
 {
@@ -15,7 +15,6 @@ class prodottosingolo
         $this->setimmagine($immagine);
         $this->setprezzo($prezzo);
         $this->setnome($nome);
-
     }
     public function getimmagine()
     {
@@ -48,72 +47,71 @@ class prodottosingolo
         $this->nome = $nome;
     }
 }
-class prodotti 
+// classe per tipo di prodotto
+class prodotti extends prodottosingolo
 {
-    private $cibo;
-    private $giochi;
-    private $cuccie;
-    private $categoria;
+
+    private $tipoprodotto;
+    // aggiunto classe 
+    private $tipocategoria;
 
     public function __construct(
-        $cibo,
-        $giochi,
-        $cuccie,
-        $categoria,
+        $tipoprodotto,
+        $immagine,
+        $prezzo,
+        $nome,
+        categoria $tipocategoria
     ) {
-
-        $this->setcibo($cibo);
-        $this->setgiochi($giochi);
-        $this->setcuccie($cuccie);
-        $this->setcategoria($categoria);
+        $this->settipoprodotto($tipoprodotto);
+        $this->setimmagine($immagine);
+        $this->setprezzo($prezzo);
+        $this->setnome($nome);
+        $this->settipoCategoria($tipocategoria);
     }
-
-    // metodi per cambiare le proprietà private
-    public function getcibo()
+    public function gettipoprodotto()
     {
 
-        return $this->cibo;
+        return $this->tipoprodotto;
     }
-    public function setcibo($cibo)
+    public function settipoprodotto($tipoprodotto)
     {
 
-        $this->cibo = $cibo;
+        $this->tipoprodotto = $tipoprodotto;
     }
-    public function getgiochi()
+    public function gettipoCategoria()
     {
 
-        return $this->giochi;
+        return $this->tipocategoria;
     }
-    public function setgiochi($giochi)
+    public function settipoCategoria($tipocategoria)
     {
 
-        $this->giochi = $giochi;
+        $this->tipocategoria = $tipocategoria;
     }
-    public function getcuccie()
-    {
-
-        return $this->cuccie;
+}
+// classe per tipo di animale se gatto o cane
+class categoria
+{
+    private $tipoanimale;
+    public function __construct(
+        $tipoanimale
+    ) {
+        $this->tipoanimale = $tipoanimale;
     }
-    public function setcuccie($cuccie)
-    {
 
-        $this->cuccie = $cuccie;
+    public function gettipoanimale()
+    {
+        return $this->tipoanimale;
     }
-    public function getcategoria()
+    public function settipoanimale($tipoanimale)
     {
-
-        return $this->categoria;
-    }
-    public function setcategoria($categoria)
-    {
-
-        $this->categoria = $categoria;
+        $this->tipoanimale = $tipoanimale;
     }
 }
 
 
-$prodotti = new prodotti('carne', 'pupazzo', "cuccia all'aperto", 'cane');
-$prodotto = new prodottosingolo('immagine', '50 $', 'casagiocattolo');
+$categoria = new categoria('gatto');
+$prodotti = new prodotti('cane', 'immagine', '50 $', 'casagiocattolo', $categoria);
+// $prodotto = new prodottosingolo('immagine', '50 $', 'casagiocattolo');
+// var_dump($categoria);
 var_dump($prodotti);
-// echo "<br><br>";
-// var_dump($prodotto);
