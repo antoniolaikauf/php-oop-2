@@ -15,7 +15,7 @@
 
 <body>
     <?php
-    // classe per tipo di prodotto
+    // classe per gioco
     class gioco extends prodottosingolo
     {
 
@@ -28,12 +28,14 @@
             $immagine,
             $prezzo,
             $nome,
+            $tipoProdotto,
             categoria $tipocategoria
         ) {
             $this->setnocivoperanimali($nocivoperanimali);
             $this->setimmagine($immagine);
             $this->setprezzo($prezzo);
             $this->setnome($nome);
+            $this->setTipoProdotto($tipoProdotto);
             $this->settipoCategoria($tipocategoria);
         }
         public function getnocivoperanimali()
@@ -58,7 +60,7 @@
         }
     }
 
-
+    // classe per cibo
     class cibo extends prodottosingolo
     {
 
@@ -71,12 +73,14 @@
             $immagine,
             $prezzo,
             $nome,
+            $tipoProdotto,
             categoria $tipocategoria
         ) {
             $this->settipocibo($tipocibo);
             $this->setimmagine($immagine);
             $this->setprezzo($prezzo);
             $this->setnome($nome);
+            $this->setTipoProdotto($tipoProdotto);
             $this->settipoCategoria($tipocategoria);
         }
         public function gettipocibo()
@@ -100,6 +104,7 @@
             $this->tipocategoria = $tipocategoria;
         }
     }
+    // classe per articoli cuccia
     class cuccia extends prodottosingolo
     {
 
@@ -112,12 +117,14 @@
             $immagine,
             $prezzo,
             $nome,
+            $tipoProdotto,
             categoria $tipocategoria
         ) {
             $this->setformacuccia($formacuccia);
             $this->setimmagine($immagine);
             $this->setprezzo($prezzo);
             $this->setnome($nome);
+            $this->setTipoProdotto($tipoProdotto);
             $this->settipoCategoria($tipocategoria);
         }
         public function getformacuccia()
@@ -144,11 +151,11 @@
 
 
     // array con dentro i rodotti 
-    // $ciao = new cibo('croccantini', 'immaginiprodotto/cibocane.jpg', '20 $', 'croccantini', $categoriacane);
     $prodotti = [
-        new gioco('non nocivo per animali', 'immaginiprodotto/palla.jpg', '50 $', 'palla', $categoriacane),
-        new cibo('croccantini', 'immaginiprodotto/cibocane.jpg', '20 $', 'croccantini', $categoriacane),
-        new cuccia('cuccia rettangolare', 'immaginiprodotto/immaginicucciagatto.jpg', '20 $', 'cuccia per gatti', $categoriagatto),
+        new gioco('non nocivo per animali', 'immaginiprodotto/palla.jpg', '50 $', 'palla', 'gioco', $categoriacane),
+        new cibo('croccantini', 'immaginiprodotto/cibocane.jpg', '20 $', 'croccantini', 'cibo', $categoriacane),
+        new cuccia('cuccia rettangolare', 'immaginiprodotto/immaginicucciagatto.jpg', '20 $', 'cuccia per gatti', 'cuccia', $categoriagatto),
+        new cuccia('cuccia rettangolare', 'immaginiprodotto/immaginicucciagatto.jpg', '20 $', 'cuccia per cani ', 'cuccia', $categoriacane),
     ];
     // var_dump($categoria);
     // var_dump($ciao);
@@ -184,6 +191,7 @@
                         <?php }
                         ?>
                     </div>
+                    <div> <?php echo $card->getTipoProdotto() ?></div>
                     <div> articolo per: <?php echo $card->gettipocategoria()->gettipoanimale() ?></div>
                     <div> <?php echo $card->getnome() ?></div>
                     <img style="width: 50%;" src="<?php echo $card->getimmagine(); ?>" alt="immagine prodotto">
