@@ -3,46 +3,46 @@ require_once('prodottosingolo.php');
 
 
 // classe per cibo
-class cibo extends prodottosingolo
+class cibo extends prodottoSingolo
 {
 
-    private $tipocibo;
+    private $tipoCibo;
     // aggiunto classe per tipo animale
-    private $tipocategoria;
+    private $tipoCategoria;
 
     public function __construct(
-        $tipocibo,
+        $tipoCibo,
         $immagine,
         $prezzo,
         $nome,
         $tipoProdotto,
-        categoria $tipocategoria
+        categoria $tipoCategoria
     ) {
-        $this->settipocibo($tipocibo);
-        $this->setimmagine($immagine);
-        $this->setprezzo($prezzo);
-        $this->setnome($nome);
+        $this->setTipoCibo($tipoCibo);
+        $this->setImmagine($immagine);
+        $this->setPrezzo($prezzo);
+        $this->setNome($nome);
         $this->setTipoProdotto($tipoProdotto);
-        $this->settipoCategoria($tipocategoria);
+        $this->setTipoCategoria($tipoCategoria);
     }
-    public function gettipocibo()
+    public function getTipoCibo()
     {
 
-        return $this->tipocibo;
+        return $this->tipoCibo;
     }
-    public function settipocibo($tipocibo)
+    public function setTipoCibo($tipoCibo)
     {
 
-        $this->tipocibo = $tipocibo;
+        $this->tipoCibo = $tipoCibo;
     }
-    public function gettipocategoria()
+    public function getTipoCategoria()
     {
 
-        return $this->tipocategoria;
+        return $this->tipoCategoria;
     }
-    public function settipoCategoria($tipocategoria)
+    public function setTipoCategoria($tipoCategoria)
     {
 
-        $this->tipocategoria = $tipocategoria;
+        $this->tipoCategoria = $tipoCategoria;
     }
 }

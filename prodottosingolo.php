@@ -1,7 +1,7 @@
 <?php
 
 // caratteristiche prodotto singolo
-class prodottosingolo
+class prodottoSingolo
 {
     // proprietà
     private $immagine;
@@ -15,38 +15,38 @@ class prodottosingolo
         $nome,
         $tipoProdotto
     ) {
-        $this->setimmagine($immagine);
-        $this->setprezzo($prezzo);
-        $this->setnome($nome);
+        $this->seTimmagine($immagine);
+        $this->setPrezzo($prezzo);
+        $this->setNome($nome);
         $this->setTipoProdotto($tipoProdotto);
     }
     // rese proprietà pubbliche in modo che si possano manipolare e prendere
-    public function getimmagine()
+    public function getImmagine()
     {
 
         return $this->immagine;
     }
-    public function setimmagine($immagine)
+    public function setImmagine($immagine)
     {
 
         $this->immagine = $immagine;
     }
-    public function getprezzo()
+    public function getPrezzo()
     {
 
         return $this->prezzo;
     }
-    public function setprezzo($prezzo)
+    public function setPrezzo($prezzo)
     {
 
         $this->prezzo = $prezzo;
     }
-    public function getnome()
+    public function getNome()
     {
 
         return $this->nome;
     }
-    public function setnome($nome)
+    public function setNome($nome)
     {
 
         $this->nome = $nome;

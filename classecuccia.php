@@ -1,46 +1,47 @@
 <?php
 require_once('prodottosingolo.php');
 // classe per articoli cuccia
-class cuccia extends prodottosingolo
+class cuccia extends prodottoSingolo
 {
 
-    private $formacuccia;
+    private $formaCuccia;
     // aggiunto classe per tipo animale
-    private $tipocategoria;
+    private $tipoCategoria;
 
     public function __construct(
-        $formacuccia,
+        $formaCuccia,
         $immagine,
         $prezzo,
         $nome,
         $tipoProdotto,
-        categoria $tipocategoria
+        categoria $tipoCategoria
     ) {
-        $this->setformacuccia($formacuccia);
-        $this->setimmagine($immagine);
-        $this->setprezzo($prezzo);
-        $this->setnome($nome);
+        $this->setFormaCuccia($formaCuccia);
+        $this->setTipoCategoria($tipoCategoria);
+        // proprietà in classe prodottosingolo
+        $this->setImmagine($immagine);
+        $this->setPrezzo($prezzo);
+        $this->setNome($nome);
         $this->setTipoProdotto($tipoProdotto);
-        $this->settipoCategoria($tipocategoria);
     }
-    public function getformacuccia()
+    public function getFormaCuccia()
     {
 
-        return $this->formacuccia;
+        return $this->formaCuccia;
     }
-    public function setformacuccia($formacuccia)
+    public function setFormaCuccia($formaCuccia)
     {
 
-        $this->formacuccia = $formacuccia;
+        $this->formaCuccia = $formaCuccia;
     }
-    public function gettipocategoria()
+    public function getTipoCategoria()
     {
 
-        return $this->tipocategoria;
+        return $this->tipoCategoria;
     }
-    public function settipoCategoria($tipocategoria)
+    public function setTipoCategoria($tipoCategoria)
     {
 
-        $this->tipocategoria = $tipocategoria;
+        $this->tipoCategoria = $tipoCategoria;
     }
 }

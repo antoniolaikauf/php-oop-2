@@ -2,20 +2,20 @@
 // classe per tipo di animale se gatto o cane
 class categoria
 {
-    private $tipoanimale;
+    private $tipoAnimale;
     public function __construct(
-        $tipoanimale
+        $tipoAnimale
     ) {
-        $this->tipoanimale = $tipoanimale;
+        $this->tipoAnimale = $tipoAnimale;
     }
 
-    public function gettipoanimale()
+    public function getTipoAnimale()
     {
-        return $this->tipoanimale;
+        return $this->tipoAnimale;
     }
-    public function settipoanimale($tipoanimale)
+    public function setTipoAnimale($tipoAnimale)
     {
-        $this->tipoanimale = $tipoanimale;
+        $this->tipoAnimale = $tipoAnimale;
     }
 }
 

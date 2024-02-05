@@ -38,29 +38,29 @@
                         <span>tipo articolo:</span>
                         <!-- controlli se esistono le proprietà nella classe -->
                         <?php
-                        if (property_exists($card, 'nocivoperanimali')) {
+                        if (property_exists($card, 'nocivoPerAnimali')) {
                         ?>
-                            <div><?php echo $card->getnocivoperanimali() ?></div>
+                            <div><?php echo $card->getNocivoPerAnimali() ?></div>
                         <?php }
                         ?>
                         <?php
-                        if (property_exists($card, 'tipocibo')) {
+                        if (property_exists($card, 'tipoCibo')) {
                         ?>
-                            <div><?php echo $card->gettipocibo() ?></div>
+                            <div><?php echo $card->getTipoCibo() ?></div>
                         <?php }
                         ?>
                         <?php
-                        if (property_exists($card, 'formacuccia')) {
+                        if (property_exists($card, 'formaCuccia')) {
                         ?>
-                            <div><?php echo $card->getformacuccia() ?></div>
+                            <div><?php echo $card->getFormaCuccia() ?></div>
                         <?php }
                         ?>
                     </div>
                     <div> <?php echo $card->getTipoProdotto() ?></div>
-                    <div> articolo per: <?php echo $card->gettipocategoria()->gettipoanimale() ?></div>
-                    <div> <?php echo $card->getnome() ?></div>
-                    <img style="width: 50%;" src="<?php echo $card->getimmagine(); ?>" alt="immagine prodotto">
-                    <div> prezzo articolo: <?php echo $card->getprezzo() ?></div>
+                    <div> articolo per: <?php echo $card->getTipoCategoria()->getTipoAnimale() ?></div>
+                    <div> <?php echo $card->getNome() ?></div>
+                    <img style="width: 50%;" src="<?php echo $card->getImmagine(); ?>" alt="immagine prodotto">
+                    <div> prezzo articolo: <?php echo $card->getPrezzo() ?></div>
                 </div>
             <?php
             }
@@ -71,6 +71,3 @@
 </body>
 
 </html>
-<?php if (property_exists($card, 'tipocategoria')) {
-    var_dump('cia');
-} ?>

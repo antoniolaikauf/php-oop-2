@@ -1,46 +1,46 @@
 <?php
 require_once('prodottosingolo.php');
 // classe per gioco
-class gioco extends prodottosingolo
+class gioco extends prodottoSingolo
 {
 
-    private $nocivoperanimali;
+    private $nocivoPerAnimali;
     // aggiunto classe per tipo animale
-    private $tipocategoria;
+    private $tipoCategoria;
 
     public function __construct(
-        $nocivoperanimali,
+        $nocivoPerAnimali,
         $immagine,
         $prezzo,
         $nome,
         $tipoProdotto,
-        categoria $tipocategoria
+        categoria $tipoCategoria
     ) {
-        $this->setnocivoperanimali($nocivoperanimali);
+        $this->setnocivoPerAnimali($nocivoPerAnimali);
         $this->setimmagine($immagine);
         $this->setprezzo($prezzo);
         $this->setnome($nome);
         $this->setTipoProdotto($tipoProdotto);
-        $this->settipoCategoria($tipocategoria);
+        $this->settipoCategoria($tipoCategoria);
     }
-    public function getnocivoperanimali()
+    public function getNocivoPerAnimali()
     {
 
-        return $this->nocivoperanimali;
+        return $this->nocivoPerAnimali;
     }
-    public function setnocivoperanimali($nocivoperanimali)
+    public function setNocivoPerAnimali($nocivoPerAnimali)
     {
 
-        $this->nocivoperanimali = $nocivoperanimali;
+        $this->nocivoPerAnimali = $nocivoPerAnimali;
     }
-    public function gettipocategoria()
+    public function gettipoCategoria()
     {
 
-        return $this->tipocategoria;
+        return $this->tipoCategoria;
     }
-    public function settipoCategoria($tipocategoria)
+    public function settipoCategoria($tipoCategoria)
     {
 
-        $this->tipocategoria = $tipocategoria;
+        $this->tipoCategoria = $tipoCategoria;
     }
 }
