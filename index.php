@@ -38,9 +38,16 @@
         <div class="row">
             <div class="col-12">
                 <form>
-                    <input type="text" name="name" class="nomeaccount">
-                    <input type="text" name="cognome" class="cognomeaccount">
-                    <input type="submit" value="iscriviti" class="creazione-account">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">nome</label>
+                        <input type="text" class="form-control nomeaccount" id="exampleInputEmail1" aria-describedby="emailHelp" name="name">
+                        <div id="emailHelp" class="form-text">We'll never share your name with anyone else.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">cognome</label>
+                        <input type="text" class="form-control cognomeaccount" id="exampleInputPassword1" name="cognome">
+                    </div>
+                    <button type="submit" class="creazione-account btn btn-primary">iscriviti</button>
                 </form>
             </div>
             <!-- ciclo su array di prodotti -->
@@ -97,35 +104,47 @@
             ?>
         </div>
     </div>
+
     <script>
         // evento click
         let account = document.querySelector('.creazione-account');
+
+
         account.addEventListener('click', function(event) {
             event.preventDefault();
 
             // valore dento input 
             let nome = document.querySelector('.nomeaccount').value
             let cognome = document.querySelector('.cognomeaccount').value
-            const params = {
-                params: {
-                    nome: nome,
-                    cognome: cognome,
-                }
+            // controllo degli input 
+            if (!isNaN(nome) || !isNaN(cognome)) {
 
-            };
+                alert('scrivi il tuo nome e cognome')
+            } else if (typeof name === 'string' && typeof cognome === 'string')
+            {
+                const params = {
+                    params: {
+                        nome: nome,
+                        cognome: cognome,
+                    }
 
+                };
+                // chiamata api
+                axios.get('http://localhost/php-oop-2/iscrizione.php', params)
+                    .then((risposta) => {
+                        console.log(risposta.data);
+                    })
+                    .catch((error) => {
+                        console.error(error);
+                    });
+            }
 
-            // chiamata api
-            axios.get('http://localhost/php-oop-2/iscrizione.php', params)
-                .then((risposta) => {
-                    console.log(risposta.data);
-                })
-                .catch((error) => {
-                    console.error(error);
-                });
-
+            // svuotamento
+            document.querySelector('.nomeaccount').value = ''
+            document.querySelector('.cognomeaccount').value = ''
         })
     </script>
+
 </body>
 
 </html>
