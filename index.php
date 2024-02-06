@@ -23,7 +23,7 @@
 
 <body>
     <?php
-    // var_dump($nome);
+
 
     // array con dentro i rodotti 
     $prodotti = [
@@ -37,10 +37,10 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <form class="creazione-account">
+                <form>
                     <input type="text" name="name" class="nomeaccount">
                     <input type="text" name="cognome" class="cognomeaccount">
-                    <input type="submit" value="iscriviti">
+                    <input type="submit" value="iscriviti" class="creazione-account">
                 </form>
             </div>
             <!-- ciclo su array di prodotti -->
@@ -82,8 +82,12 @@
 
                     <?php
                     if ($account[0]['registrato']) {
+
                     ?>
-                        <div> prezzo articolo: <?php echo $card->getPrezzo() -  $card->getPrezzo() / 100 * 20 ?></div>
+                        <div> prezzo articolo: <?php echo $card->getPrezzo() -  $card->getPrezzo() / 100 * 20;  ?></div>
+                    <?php } else {
+                    ?>
+                        <div> prezzo articolo: <?php echo $card->getPrezzo() ?></div>
                     <?php
                     }
                     ?>
@@ -93,25 +97,35 @@
             ?>
         </div>
     </div>
-    <!-- <script>
+    <script>
+        // evento click
         let account = document.querySelector('.creazione-account');
-        account.addEventListener('click', function() {})
-        let nomeAccount = document.querySelector('.nomeaccount').value
-        let cognomeAccount = document.querySelector('.cognomeaccount').value
-        let params = {
+        account.addEventListener('click', function(event) {
+            event.preventDefault();
 
-            nome: nomeAccount,
-            cognome: cognomeAccount,
+            // valore dento input 
+            let nome = document.querySelector('.nomeaccount').value
+            let cognome = document.querySelector('.cognomeaccount').value
+            const params = {
+                params: {
+                    nome: nome,
+                    cognome: cognome,
+                }
 
-        };
-        axios.get('http://localhost/php-oop-2/iscrizione.php', params)
-            .then((risposta) => {
-                console.log(risposta.data);
-            })
-            .catch((error) => {
-                console.error(error);
-            });
-    </script> -->
+            };
+
+
+            // chiamata api
+            axios.get('http://localhost/php-oop-2/iscrizione.php', params)
+                .then((risposta) => {
+                    console.log(risposta.data);
+                })
+                .catch((error) => {
+                    console.error(error);
+                });
+
+        })
+    </script>
 </body>
 
 </html>
