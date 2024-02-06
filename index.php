@@ -15,8 +15,8 @@
     require_once('classecibo.php');
     require_once('classecuccia.php');
 
-    $jsonAccount = file_get_contents("account.json");
-    $account = json_decode($jsonAccount, true);
+    // $jsonAccount = file_get_contents("account.json");
+    // $account = json_decode($jsonAccount, true);
     ?>
     <title>card prodotti</title>
 </head>
@@ -37,7 +37,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <form>
+                <!-- <form>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">nome</label>
                         <input type="text" class="form-control nomeaccount" id="exampleInputEmail1" aria-describedby="emailHelp" name="name">
@@ -48,7 +48,7 @@
                         <input type="text" class="form-control cognomeaccount" id="exampleInputPassword1" name="cognome">
                     </div>
                     <button type="submit" class="creazione-account btn btn-primary">iscriviti</button>
-                </form>
+                </form> -->
             </div>
             <!-- ciclo su array di prodotti -->
             <?php foreach ($prodotti as $card) {
@@ -88,6 +88,7 @@
                     <!-- proprietà appartenente a prodottosingolo -->
 
                     <?php
+                    // primo if è per il bonus bisognerebbe commentarlo
                     if ($account[0]['registrato']) {
 
                     ?>
@@ -105,7 +106,7 @@
         </div>
     </div>
 
-    <script>
+    <!-- <script>
         // evento click
         let account = document.querySelector('.creazione-account');
 
@@ -119,9 +120,8 @@
             // controllo degli input 
             if (!isNaN(nome) || !isNaN(cognome)) {
 
-                alert('scrivi il tuo nome e cognome')
-            } else if (typeof name === 'string' && typeof cognome === 'string')
-            {
+            } else if (typeof name === 'string' && typeof cognome === 'string') {
+               
                 const params = {
                     params: {
                         nome: nome,
@@ -143,7 +143,7 @@
             document.querySelector('.nomeaccount').value = ''
             document.querySelector('.cognomeaccount').value = ''
         })
-    </script>
+    </script> -->
 
 </body>
 
