@@ -33,7 +33,7 @@
     try {
         // array con dentro i rodotti 
         $prodotti = [
-            new gioco('non nocivo per animali', 'immaginiprodotto/palla.jpg', 50, 'palla', 'gioco', $categoriacane),
+            new gioco('non nocivo per animali', 'immaginiprodotto/palla.jpg', 7, 'palla', 'gioco', $categoriacane),
             new cibo('croccantini', 'immaginiprodotto/cibocane.jpg', 20, 'croccantini', 'cibo', $categoriacane),
             new cuccia('cuccia rettangolare', 'immaginiprodotto/immaginicucciagatto.jpg', 20, 'cuccia per gatti', 'cuccia', $categoriagatto),
             new cuccia('cuccia rettangolare', 'immaginiprodotto/immaginicucciagatto.jpg', 50, 'cuccia per cani ', 'cuccia', $categoriacane),
@@ -61,7 +61,7 @@
             </div>
             <!-- ciclo su array di prodotti -->
             <?php foreach ($prodotti as $card) {
-
+               
             ?>
                 <div class="col-6 text-center border">
                     <div class="d-flex justify-content-center align-items-center">
@@ -76,7 +76,9 @@
                         <?php
                         if (property_exists($card, 'tipoCibo')) {
                         ?>
-                            <div><?php echo $card->getTipoCibo() ?></div>
+                            <div>
+                                <?php echo $card->getTipoCibo() ?>
+                            </div>
                         <?php }
                         ?>
                         <?php
@@ -101,7 +103,7 @@
                     if ($account[0]['registrato']) {
 
                     ?>
-                        <div> prezzo articolo: <?php echo $card->getPrezzo() -  $card->getPrezzo() / 100 * 20;  ?></div>
+                        <div> prezzo articolo: <?php echo $card->prezzoScontato($card->getPrezzo()); ?> $</div>
                     <?php } else {
                     ?>
                         <div> prezzo articolo: <?php echo $card->getPrezzo() ?> $</div>
@@ -112,6 +114,7 @@
             <?php
             }
             ?>
+
         </div>
     </div>
 

@@ -1,14 +1,11 @@
 <?php
+require_once('proprietà.php');
 // caratteristiche prodotto singolo
 class prodottoSingolo
 {
+    use attributi;
     // proprietà
-    private $immagine;
-    private $prezzo;
-    private $nome;
-    private $tipoProdotto;
 
-    // prese delle proprietà
     public function __construct(
         $immagine,
         $prezzo,
@@ -19,49 +16,5 @@ class prodottoSingolo
         $this->setPrezzo($prezzo);
         $this->setNome($nome);
         $this->setTipoProdotto($tipoProdotto);
-    }
-    // rese proprietà pubbliche in modo che si possano manipolare e prendere
-    public function getImmagine()
-    {
-
-        return $this->immagine;
-    }
-    public function setImmagine($immagine)
-    {
-
-        $this->immagine = $immagine;
-    }
-    public function getPrezzo()
-    {
-
-        return $this->prezzo;
-    }
-    public function setPrezzo($prezzo)
-    {
-        // controllo
-        if (!is_int($prezzo)) {
-            throw new Exception(" $prezzo non è un numero/ stringa , in prezzo ci deve essere un numero");
-        }
-        $this->prezzo = $prezzo;
-    }
-    public function getNome()
-    {
-
-        return $this->nome;
-    }
-    public function setNome($nome)
-    {
-
-        $this->nome = $nome;
-    }
-    public function getTipoProdotto()
-    {
-
-        return $this->tipoProdotto;
-    }
-    public function setTipoProdotto($tipoProdotto)
-    {
-
-        $this->tipoProdotto = $tipoProdotto;
     }
 }

@@ -1,8 +1,10 @@
 <?php
 require_once('prodottosingolo.php');
+
 // classe per articoli cuccia
 class cuccia extends prodottoSingolo
 {
+    
     // proprietà specifica per classe cuccia
     private $formaCuccia;
     // aggiunto classe per tipo animale file categoria.php
@@ -14,7 +16,9 @@ class cuccia extends prodottoSingolo
         $prezzo,
         $nome,
         $tipoProdotto,
-        categoria $tipoCategoria
+        categoria $tipoCategoria,
+
+
     ) {
         $this->setFormaCuccia($formaCuccia);
         $this->setTipoCategoria($tipoCategoria);

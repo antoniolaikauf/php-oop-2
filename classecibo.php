@@ -1,10 +1,11 @@
 <?php
 require_once('prodottosingolo.php');
 
-
 // classe per cibo
 class cibo extends prodottoSingolo
 {
+
+
     // proprietà specifica per classe cibo
     private $tipoCibo;
     // aggiunto classe per tipo animale file categoria.php
@@ -16,7 +17,9 @@ class cibo extends prodottoSingolo
         $prezzo,
         $nome,
         $tipoProdotto,
-        categoria $tipoCategoria
+        categoria $tipoCategoria,
+        // proprietà dentro recensione
+
     ) {
         $this->setTipoCibo($tipoCibo);
         $this->setTipoCategoria($tipoCategoria);
