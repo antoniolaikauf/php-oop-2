@@ -24,6 +24,9 @@
 <body>
     <?php
 
+    // due tipi di categoria di animale 
+    $categoriagatto = new categoria('gatto');
+    $categoriacane = new categoria('cane');
 
     // array con dentro i rodotti 
     $prodotti = [

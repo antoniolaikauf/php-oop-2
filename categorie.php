@@ -19,6 +19,3 @@ class categoria
     }
 }
 
-// due tipi di categoria di animale 
-$categoriagatto = new categoria('gatto');
-$categoriacane = new categoria('cane');
