@@ -38,6 +38,10 @@ class prodottoSingolo
     }
     public function setPrezzo($prezzo)
     {
+        // controllo
+        if (!is_int($prezzo)) {
+            throw new Exception(" $prezzo non è un numero/ stringa , in prezzo ci deve essere un numero");
+        }
         $this->prezzo = $prezzo;
     }
     public function getNome()
